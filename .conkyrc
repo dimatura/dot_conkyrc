@@ -1,0 +1,60 @@
+-- vim: ts=4 sw=4 noet ai cindent syntax=lua
+conky.config={
+background=true,
+use_xft=false,
+---- Xft font when Xft is enabled
+-- xftfont Trebuchet MS:size=10
+-- xftfont Sans:size=8
+-- xftfont terminus:size=7
+-- xftfont='Bitstream Vera Sans Mono:size=6',
+-- font = 'DejaVu Sans Mono:size=12',
+-- font='Ubuntu:style=medium:size=8',
+font='-*-clean-medium-r-*-*-8-*-*-*-*-*-*-*',
+-- font='terminus:size=8',
+-- xftalpha=1,
+update_interval=1.0,
+total_run_times=0,
+own_window=false, own_window_transparent=false,
+own_window_type='desktop',
+double_buffer=true,
+minimum_height=200,
+minimum_width=200,
+draw_shades=true,
+draw_outline=false,
+draw_borders=false,
+draw_graph_borders=false,
+--stippled_borders=false,
+--border_inner_margin=2,
+border_outer_margin=2,
+border_width=1,
+default_color='white',
+default_shade_color='black',
+default_outline_color='white',
+alignment='top_left',
+-- alignment='top_right',
+-- alignment bottom_left
+-- alignment bottom_right
+-- alignment none
+-- Gap in pixels from left/top border of screen
+gap_x=12,
+gap_y=1,
+-- Subtract file system buffers from used memory?
+no_buffers=true,
+uppercase=false,
+cpu_avg_samples=2,
+---- force utf? note that UTF8 support required XFT
+override_utf8_locale=false,
+color1 = 'ff71ce', -- pink
+color2 = '01cdfe', -- light blue
+color3 = '05ffa1', -- green
+color4 = 'b967ff', -- purple
+color5 = 'fffb96' -- yellow
+---- unknown option on 16.04. can be worked around with gap_x/alignment
+-- xinerama_head = 2
+}
+
+-- ${color1}RAM:${color} $memperc% ${color2}| ${color1}CPU:${color} ${cpu cpu0}% ${color2}| ${color1}BATT:$color ${battery} ${color2}| ${color5}${time %a %e %B %k:%M:%S}
+
+conky.text = [[
+${color1}RAM:${color} $mem/$memmax ${color2}| ${color1}CPU:${color} ${cpu cpu0}% ${color2}| ${color1}BATT:$color ${battery} ${color2}| ${color5}${time %a %e %B %k:%M:%S}
+]]
